@@ -1,12 +1,13 @@
 #include "value.h"
+
 #include <stdio.h>
+
 #include "memory.h"
 
-// TODO: implement
 void initValueArray(ValueArray* array) {
-  array->values = NULL;
+  array->values   = NULL;
   array->capacity = 0;
-  array->count = 0;
+  array->count    = 0;
 };
 
 void writeValueArray(ValueArray* array, Value value) {
@@ -25,6 +26,4 @@ void freeValueArray(ValueArray* array) {
   initValueArray(array);
 };
 
-void printValue(Value value) {
-  printf("%g", value);
-}
+void printValue(Value value) { printf("%g", value); }

@@ -1,5 +1,6 @@
 
 #include "memory.h"
+
 #include <stdlib.h>
 
 /*
@@ -17,7 +18,6 @@ void* rellocate(void* pointer, size_t oldSize, size_t newSize) {
   }
 
   void* result = realloc(pointer, newSize);
-  if (result == NULL)
-    exit(1);
+  if (result == NULL) exit(1);
   return result;
 }

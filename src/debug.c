@@ -1,4 +1,5 @@
 #include "debug.h"
+
 #include <stdio.h>
 
 void disassembleChunk(Chunk* chunk, const char* name) {

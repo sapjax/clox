@@ -1,6 +1,9 @@
 #include "vm.h"
+
 #include <stdio.h>
+
 #include "common.h"
+#include "compiler.h"
 #include "debug.h"
 #include "value.h"
 
@@ -11,9 +14,7 @@ static void resetStack() {
   vm.stackTop = vm.stack;
 }
 
-void initVM() {
-  resetStack();
-}
+void initVM() { resetStack(); }
 
 void freeVM() {}
 
@@ -89,8 +90,7 @@ static InterpretResult run() {
 #undef BINARY_OP
 }
 
-InterpretResult interpret(Chunk* chunk) {
-  vm.chunk = chunk;
-  vm.ip = vm.chunk->code;
-  return run();
+InterpretResult interpret(const char* source) {
+  compile(source);
+  return INTERPRET_OK;
 }
